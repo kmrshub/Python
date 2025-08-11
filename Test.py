@@ -1,5 +1,3 @@
-import keyword
-
-# printing all keywords at once using "kwlist()"
-print("The list of keywords is : ")
-print(keyword.kwlist)
+my_list = {1,2,3,5,6}
+random = frozenset(my_list)
+print(random)
