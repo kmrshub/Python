@@ -261,9 +261,83 @@ x = frozenset([1,2,4,5])
 print(x,type(x))
 
 # MAPPPING TYPE
-## DICTIONARY - key-value pairs
+## DICTIONARY
+'Unordered, mutable and collection of key-value pairs. Defined using curly braces "{}"'
+'Keys are unique and immutable. (can be string, number or tuple)'
+'Value can be of any type and can be duplicate.'
+### Syntax
 student = {"name":"Shubham", "age": 25, "city":"Patna"}
 print(student, type(student))
+
+my_dict = {"name": "Vishal", "age": 30, "state": "Bihar", "city": "Patna", "number": "9485216725"}
+print(my_dict)
+
+### Adding or updating item
+my_dict["email"] = 'vishalraj1023@gmail.com' # Adding new key-value pair
+my_dict["age"] = 31 # Updating existing new key-value pair
+print(my_dict)
+
+### Accessing values
+print(my_dict["name"])
+print(my_dict["age"])
+
+### Dictionary methods
+#### keys() - Get all the keys
+print(my_dict.keys())
+
+#### values() - Get all values
+print(my_dict.values())
+
+#### items() - Get key value pair
+for k,v in my_dict.items():
+    print(k, ":", v)
+
+#### get() - Safely access value, returns NONE if the key is not found.
+print(my_dict.get("name"))
+print(my_dict.get("gender"))
+
+#### clear() - Removes all items
+student.clear()
+print(student)
+
+### Looping through dictionary
+for key in my_dict:
+    print(key, "-->", my_dict[key])
+
+### Nested Dictionary
+students = {"student1" : {"name": "Abhishek", "age": 21},"student2" : {"name": "Abhinav", "age": 20}}
+print(students["student1"]["name"])
+
+### Removing items from dictionary
+#### Using del
+del my_dict["email"]
+print(my_dict)
+
+#### Using pop()
+my_dict.pop("number")
+print(my_dict)
+
+### Dictionary Comprehension
+'Concise and elegant way to create a dictionaries in a single line of code using a for loop inside curly braces'
+#### Syntax
+'variable = {key_expression : value_expression for item in iterable if condition}'
+
+squares = {x : x**x for x in range(1,7)}
+print(squares)
+
+even_squares = {x : x**x for x in range(1,10) if x%2 == 0}
+print(even_squares)
+
+#### Using List
+fruit1 = ["apple", "banana", "cherry"]
+fruit_length = {fruit : len(fruit) for fruit in fruit1}
+print(fruit_length)
+
+#### Using zip() - If we have two list and want to combine them in a dictionary
+keys = ['a', 'b', 'c']
+values = [1,2,3]
+my_dict1 = {k:v for k,v in zip(keys,values)}
+print(my_dict1)
 
 # TYPE CASTING
 a = int("10") # string to int
